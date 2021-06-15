@@ -1,0 +1,7 @@
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\bin\Debug\WarehouseManager.exe.config
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\bin\Debug\WarehouseManager.exe
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\bin\Debug\WarehouseManager.pdb
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\obj\Debug\WarehouseManager.csproj.AssemblyReference.cache
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\obj\Debug\WarehouseManager.csproj.CoreCompileInputs.cache
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\obj\Debug\WarehouseManager.exe
+C:\Users\Norbi\Documents\ProgTech-beadando\WarehouseManager\WarehouseManager\obj\Debug\WarehouseManager.pdb
