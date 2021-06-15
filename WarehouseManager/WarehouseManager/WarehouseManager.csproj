@@ -43,12 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Monitor\ElectricWarehouseIterator.cs" />
+    <Compile Include="Monitor\Iterator.cs" />
+    <Compile Include="Monitor\MonitorClass.cs" />
+    <Compile Include="Monitor\ProvisionWarehouseIterator.cs" />
+    <Compile Include="Producer-Consumer\Consumer.cs" />
+    <Compile Include="Producer-Consumer\ElectricProducer.cs" />
+    <Compile Include="Producer-Consumer\Producer.cs" />
+    <Compile Include="Producer-Consumer\ProvisionProducer.cs" />
     <Compile Include="Products\AProducts.cs" />
     <Compile Include="Products\ElectricProducts.cs" />
     <Compile Include="Products\ProvisionProducts.cs" />
     <Compile Include="Products\SimpleProductFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WarehouseManager.cs" />
     <Compile Include="Warehouses\ElectricWarehouse.cs" />
     <Compile Include="Warehouses\ProvisionWarehouse.cs" />
     <Compile Include="Warehouses\Warehouse.cs" />
@@ -56,8 +65,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Producer-Consumer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WarehouseManager.Products;
 using WarehouseManager.Warehouses;
+using WarehouseManager.Monitor;
 
 namespace WarehouseManager
 {
@@ -12,15 +13,12 @@ namespace WarehouseManager
     {
         static void Main(string[] args)
         {
-            ElectricWarehouse ew = new ElectricWarehouse(new SimpleProductFactory());
-            ew.GetProduct("Porszívó");
-            ew.SendProduct("Porszívó");
-            
+            WarehouseManager wm = new WarehouseManager();
+            wm.ProduceElectrics("Porszívó", true);
+            wm.ProduceElectrics("Monitor", false);
 
-            ProvisionWarehouse pw = new ProvisionWarehouse(new SimpleProductFactory());
-            pw.GetProduct("Kenyér");
-            pw.SendProduct("Kenyér");
-
+            wm.ConsumeElectrics("Monitor");
+            wm.ConsumeProvisions("Kenyér");
 
             Console.ReadKey();
         }

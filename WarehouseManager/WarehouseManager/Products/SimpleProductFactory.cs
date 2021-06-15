@@ -17,7 +17,7 @@ namespace WarehouseManager.Products
             }
             else if (type == "ProvisionProduct")
             {
-                product = new ProvisionProducts();
+                product = new ProvisionProducts(name);
             }
             return product;
         }

@@ -8,12 +8,6 @@ namespace WarehouseManager.Products
 {
     class ElectricProducts : AProducts
     {
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
 
         private bool isWireless;
         public bool IsWireless     
@@ -23,15 +17,19 @@ namespace WarehouseManager.Products
         }
         public ElectricProducts(string name, bool isWireless)
         {
-            this.name = name;
+            this.Name = name;
             this.isWireless = isWireless;
         }
         protected override void Wrap()
         {
-            Console.WriteLine("A törékeny műszaki cikk becsomagolása buborék fóliába...");
-            Console.WriteLine("A csomagolt műszaki cikk dobozba helyezése...");
-            Console.WriteLine("A műszaki cikk becsomagolása sikeresen megtörtént");
+            Console.WriteLine("A törékeny {0} becsomagolása buborék fóliába...", this.Name);
+            Console.WriteLine("A csomagolt {0} dobozba helyezése...", this.Name);
+            Console.WriteLine("A(z) {0} becsomagolása sikeresen megtörtént", this.Name);
         }
-        
+
+        public override string ToString()
+        {
+            return string.Format("{0} ", (this.isWireless ? "Vezeték nélküli" : "Vezetékes")) + base.ToString();
+        }
     }
 }

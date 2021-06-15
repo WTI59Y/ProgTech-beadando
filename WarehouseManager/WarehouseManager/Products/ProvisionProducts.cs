@@ -8,10 +8,14 @@ namespace WarehouseManager.Products
 {
     class ProvisionProducts : AProducts
     {
+        public ProvisionProducts(string name)
+        {
+            this.Name = name;
+        }
         protected override void Wrap()
         {
-            Console.WriteLine("Az élelmiszer bedobozolása elkezdődött...");
-            Console.WriteLine("Az élelmiszer becsomagolása sikeresen megtörtént.");
+            Console.WriteLine("A(z) {0} bedobozolása elkezdődött...", this.Name);
+            Console.WriteLine("A(z) {0} becsomagolása sikeresen megtörtént.", this.Name);
         }
     }
 }

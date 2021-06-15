@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WarehouseManager.Monitor;
 using WarehouseManager.Products;
 
 namespace WarehouseManager.Warehouses
@@ -27,7 +28,9 @@ namespace WarehouseManager.Warehouses
             }
             else 
             {
-                Console.WriteLine("Jelenleg nincs raktáron a termék!");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Jelenleg nincs raktáron ez a termék! ({0})\n",productName);
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
         public override void GetProduct(string productName)
@@ -41,9 +44,16 @@ namespace WarehouseManager.Warehouses
             }
             else
             {
-                Console.WriteLine("Nincs elég férőhely a raktárban!");
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Nincs elég férőhely a raktárban!\n");
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
 
+        public Iterator CreateIterator()
+        {
+            return new ProvisionWarehouseIterator(storage);
+        }
     }
 }
