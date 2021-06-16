@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseManager.Products
 {
-    class ElectricProducts : AProducts
+    class ElectricProducts : Products
     {
 
         private bool isWireless;

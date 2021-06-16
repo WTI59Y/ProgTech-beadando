@@ -51,7 +51,7 @@
     <Compile Include="Producer-Consumer\ElectricProducer.cs" />
     <Compile Include="Producer-Consumer\Producer.cs" />
     <Compile Include="Producer-Consumer\ProvisionProducer.cs" />
-    <Compile Include="Products\AProducts.cs" />
+    <Compile Include="Products\Products.cs" />
     <Compile Include="Products\ElectricProducts.cs" />
     <Compile Include="Products\ProvisionProducts.cs" />
     <Compile Include="Products\SimpleProductFactory.cs" />

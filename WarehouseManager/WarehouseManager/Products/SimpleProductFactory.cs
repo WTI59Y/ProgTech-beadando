@@ -8,9 +8,9 @@ namespace WarehouseManager.Products
 {
     class SimpleProductFactory
     {
-        public AProducts OrderProduct(string type, string name)
+        public Products OrderProduct(string type, string name)
         {
-            AProducts product = null;
+            Products product = null;
             if (type == "ElectricProduct")
             {
                 product = new ElectricProducts(name, false);

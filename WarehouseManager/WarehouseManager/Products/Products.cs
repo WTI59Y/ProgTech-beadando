@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseManager.Products
 {
-    abstract class AProducts
+    abstract class Products
     {
         private string name;
         public string Name

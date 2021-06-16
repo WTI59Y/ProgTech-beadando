@@ -37,7 +37,7 @@ namespace WarehouseManager.Monitor
         {
             while(i.HasNext())
             {
-                AProducts product = (AProducts)i.Next();
+                Products.Products product = (Products.Products)i.Next();
                 Console.WriteLine(product);
             }
         }

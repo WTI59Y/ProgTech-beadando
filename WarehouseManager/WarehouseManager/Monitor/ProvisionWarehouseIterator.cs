@@ -9,10 +9,10 @@ namespace WarehouseManager.Monitor
 {
     class ProvisionWarehouseIterator : Iterator
     {
-        List<AProducts> storage;
+        List<Products.Products> storage;
         int position = 0;
 
-        public ProvisionWarehouseIterator(List<AProducts> storage)
+        public ProvisionWarehouseIterator(List<Products.Products> storage)
         {
             this.storage = storage;
         }

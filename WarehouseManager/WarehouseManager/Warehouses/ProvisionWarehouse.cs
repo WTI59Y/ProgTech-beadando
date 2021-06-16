@@ -10,12 +10,12 @@ namespace WarehouseManager.Warehouses
 {
     class ProvisionWarehouse : Warehouse
     {
-        List<AProducts> storage;
+        List<Products.Products> storage;
         public ProvisionWarehouse(SimpleProductFactory factory)
             :base(factory)
         {
             this.capacity = 50;
-            this.storage = new List<AProducts>();
+            this.storage = new List<Products.Products>();
         }
         public override void SendProduct(string productName)
         {

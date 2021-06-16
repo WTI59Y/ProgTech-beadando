@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseManager.Products
 {
-    class ProvisionProducts : AProducts
+    class ProvisionProducts : Products
     {
         public ProvisionProducts(string name)
         {
