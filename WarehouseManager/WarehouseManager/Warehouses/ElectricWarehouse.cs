@@ -56,7 +56,21 @@ namespace WarehouseManager.Warehouses
             }
         }
         public override void GetProduct(string productName)
-        { }
+        {
+            if (storage.Count < capacity)
+            {
+                ElectricProducts product;
+                product = (ElectricProducts)electricFactory.OrderProduct(productName, false);
+                product.Store();
+                storage.Add(productName, product);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Nincs elég férőhely a raktárban!\n");
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+        }
         public void GetProduct(string productName, bool isWireless)
         {
             if (storage.Count < capacity)
