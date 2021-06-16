@@ -22,8 +22,8 @@ namespace WarehouseManager
 
         public WarehouseManager()
         {
-            this.ew = new ElectricWarehouse(new SimpleProductFactory());
-            this.pw = new ProvisionWarehouse(new SimpleProductFactory());
+            this.ew = new ElectricWarehouse(new ElectricProductFactory());
+            this.pw = new ProvisionWarehouse(new ProvisionProductFactory());
             this.monitor = new MonitorClass(this.ew, this.pw);
             this.electricProducer = new ElectricProducer(this.ew);
             this.provisionProducer = new ProvisionProducer(this.pw);

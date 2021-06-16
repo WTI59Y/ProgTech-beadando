@@ -11,18 +11,20 @@ namespace WarehouseManager.Warehouses
     class ProvisionWarehouse : Warehouse
     {
         List<Products.Products> storage;
-        public ProvisionWarehouse(SimpleProductFactory factory)
+        ProvisionProductFactory provisionFactory;
+        public ProvisionWarehouse(ProvisionProductFactory factory)
             :base(factory)
         {
             this.capacity = 50;
             this.storage = new List<Products.Products>();
+            this.provisionFactory = factory;
         }
         public override void SendProduct(string productName)
         {
             if (storage.Count > 0)
             {
                 ProvisionProducts product;
-                product = (ProvisionProducts)factory.OrderProduct("ProvisionProduct", productName);
+                product = (ProvisionProducts)provisionFactory.OrderProduct(productName);
                 product.Generate();
                 storage.RemoveAt(storage.Count - 1);
             }
@@ -38,7 +40,7 @@ namespace WarehouseManager.Warehouses
             if (storage.Count < capacity)
             {
                 ProvisionProducts product;
-                product = (ProvisionProducts)factory.OrderProduct("ProvisionProduct", productName);
+                product = (ProvisionProducts)provisionFactory.OrderProduct(productName);
                 product.Store();
                 storage.Add(product);
             }

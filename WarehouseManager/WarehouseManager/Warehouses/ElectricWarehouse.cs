@@ -13,20 +13,38 @@ namespace WarehouseManager.Warehouses
     {
         Dictionary<string, ElectricProducts> storage;
         Producer p;
+        ElectricProductFactory electricFactory;
 
-        public ElectricWarehouse(SimpleProductFactory factory)
+        public ElectricWarehouse(ElectricProductFactory factory)
             : base(factory)
         {
             this.capacity = 150;
             this.storage = new Dictionary<string, ElectricProducts>();
             this.p = new ElectricProducer(this);
+            this.electricFactory = factory;
+        }
+        public void SendProduct(string productName, bool isWireless)
+        {
+            if (storage.Count > 0 && storage.ContainsKey(productName))
+            {
+                ElectricProducts product;
+                product = (ElectricProducts)electricFactory.OrderProduct(productName, isWireless);
+                product.Generate();
+                storage.Remove(productName);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Jelenleg nincs raktáron ez a termék! ({0})\n", productName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
         }
         public override void SendProduct(string productName)
         {
             if (storage.Count > 0 && storage.ContainsKey(productName))
             {
                 ElectricProducts product;
-                product = (ElectricProducts)factory.OrderProduct("ElectricProduct", productName);
+                product = (ElectricProducts)electricFactory.OrderProduct(productName, false);
                 product.Generate();
                 storage.Remove(productName);
             }
@@ -44,7 +62,7 @@ namespace WarehouseManager.Warehouses
             if (storage.Count < capacity)
             {
                 ElectricProducts product;
-                product = (ElectricProducts)factory.OrderProduct("ElectricProduct", productName);
+                product = (ElectricProducts)electricFactory.OrderProduct(productName, isWireless);
                 product.IsWireless = isWireless;
                 product.Store();
                 storage.Add(productName, product);

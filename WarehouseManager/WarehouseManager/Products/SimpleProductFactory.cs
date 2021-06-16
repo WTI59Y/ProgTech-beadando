@@ -6,20 +6,8 @@ using System.Threading.Tasks;
 
 namespace WarehouseManager.Products
 {
-    class SimpleProductFactory
+    interface SimpleProductFactory
     {
-        public Products OrderProduct(string type, string name)
-        {
-            Products product = null;
-            if (type == "ElectricProduct")
-            {
-                product = new ElectricProducts(name, false);
-            }
-            else if (type == "ProvisionProduct")
-            {
-                product = new ProvisionProducts(name);
-            }
-            return product;
-        }
+        Products OrderProduct(string name);
     }
 }
