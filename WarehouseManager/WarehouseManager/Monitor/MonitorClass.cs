@@ -38,6 +38,7 @@ namespace WarehouseManager.Monitor
             while(i.HasNext())
             {
                 Products.Products product = (Products.Products)i.Next();
+                if(product is ElectricProducts)
                 Console.WriteLine(product);
             }
         }

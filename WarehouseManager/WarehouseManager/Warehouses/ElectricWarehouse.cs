@@ -62,7 +62,17 @@ namespace WarehouseManager.Warehouses
                 ElectricProducts product;
                 product = (ElectricProducts)electricFactory.OrderProduct(productName, false);
                 product.Store();
-                storage.Add(productName, product);
+
+                string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                StringBuilder articleNo = new StringBuilder();
+                Random rnd = new Random();
+
+                for (int i = 0; i < 12; i++)
+                {
+                    articleNo.Append(chars[rnd.Next(chars.Length)]);
+                }
+
+                storage.Add(articleNo.ToString(), product);
             }
             else
             {
